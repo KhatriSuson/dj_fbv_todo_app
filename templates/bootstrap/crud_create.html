@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+    <h1>Add Crud</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="title" class="form-label">Title</label>
+        <input type="text"
+               name="title"
+               placeholder="Add Content ..."
+               lass="form-control"
+               id="title"
+               name="title">
+        <br>
+        <label for="dis" class="form-label">Dis</label>
+        <input type="text"
+               name="dis"
+               placeholder="Add disciption.."
+               class="form-control"
+               id="dis"
+               name="dis">
+        <br>
+        <br>
+        <button type="submit" class=" btn btn-success ">Save</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,18 @@
+<h1>My Daily Update</h1>
+<a href="/crud-create/">
+    <button>Add Crud</button>
+</a>
+
+{% for crud in cruds %}
+<p>
+    {{ crud.title }}
+
+    <a href="/crud-update/{{ crud.id}}/">
+        <button>Update</button>
+    </a>
+    <a href="/crud-delete/{{ crud.id}}/">
+        <button>Delete</button>
+    </a>
+</p>
+
+{% endfor %}

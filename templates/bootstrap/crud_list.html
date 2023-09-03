@@ -1,0 +1,59 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+  <body>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for crud in cruds %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <!-- <div>
+                <h5 class="card-title">{{ crud.title }}</h5>
+              </div>
+              <div>
+                <h5 class="card-title">{{ crud.dis }}</h5>
+</div> -->
+              <ul class="list-group">
+                <li class="list-group-item bg-primary mt-1 mb-1">{{ crud.title }}</li>
+                <li class="list-group-item bg-secondary mt-1 mb-1">{{ crud.dis }}</li>
+              </ul>
+              <a href="{% url 'crud-update' crud.id %}" class="btn btn-success">Upadate</a>
+              <a href="{% url 'crud-delete' crud.id %}" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+        <!--   Testing division only for test -->
+        <!-- <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>{{ crud.title }}</h2>
+              <p>{{ crud.dis }}</p>
+              <p>
+                <a class="btn" href="#">View details »</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+        <!--   Testing division only for test -->
+        <!-- <div class="container">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{ crud.title }}</li>
+                  <li class="list-group-item">{{ crud.dis }}</li>
+                </ul>
+              </div>
+              <br>
+              <a href="/crud-update/{{ crud.id }}/" class="btn btn-success">Update</a>
+              <a href="/crud-delete/{{ crud.id }}/" class="btn btn-danger">Delete</a>
+            </div>
+          </div> -->
+      {% endfor %}
+      <div class="col">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <a href="{% url 'crud-create' %}" class="btn btn-primary">Create</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock content %}
